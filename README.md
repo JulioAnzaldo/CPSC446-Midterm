@@ -101,5 +101,42 @@ Make sure you have the following installed:
    python app.py
    ```
 
+## 6. API Routes
+
+### **Authentication Routes**
+| Method | Endpoint       | Description |
+|--------|--------------|-------------|
+| **POST** | `/register` | Registers a new user. Accepts `username`, `email` and `password` in JSON. |
+| **POST** | `/login` | Logs in a user and returns a JWT token. Requires `username` and `password`. |
+
+---
+
+### **Protected Routes (Require JWT)**
+| Method | Endpoint       | Description |
+|--------|--------------|-------------|
+| **POST** | `/upload` | Allows an authenticated user to upload a PDF file. Accepts `file` (PDF only) and `is_public` (`true` or `false`). |
+| **GET** | `/protected` | A protected route that requires a valid JWT token to access. Returns a message confirming the authenticated user. |
+
+---
+
+### **Public Routes (No Authentication Required)**
+| Method | Endpoint       | Description |
+|--------|--------------|-------------|
+| **GET** | `/` | Serves the front-end homepage (if applicable, but not sure at this point). |
+| **GET** | `/public_files` | Returns a list of all publicly available files. |
+
+---
+
+### **Usage Notes**
+- **JWT Authentication:**  
+  - Routes marked as **protected** require the `Authorization` header with a Bearer token:  
+    ```
+    Authorization: Bearer YOUR_JWT_TOKEN
+    ```
+- **File Upload Requirements:**  
+  - Only **PDF** files are allowed.
+  - Maximum file size: **2MB**.
+  - The `is_public` field determines if the file is visible in `/public_files`.
+
 ## Secret Key Setup
 By default, this project uses a demo secret key in config.py. In a production environment, we would load this key from an environment variable or a .env file. For the purposes of this assignment, you can leave the demo key as-is.
