@@ -57,7 +57,7 @@ my_project/
         └── app.py # Main Flask app (routes, config, etc.) 
     ├── requirements.txt # Python dependencies │ 
     ├── venv/ # Virtual environment (not tracked in Git) 
-    └── README.md # This readme file
+    └── README.md # This readme file 
 
 ## 5. Installation and Setup
 
