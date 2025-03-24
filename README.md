@@ -51,13 +51,15 @@ This project was created for **CPSC 446** to demonstrate:
 
 ## 4. File Structure
 
+```
 my_project/ 
     ├── back_end/
         ├── uploads/ # Folder that holds user uploads (PDF's)
         └── app.py # Main Flask app (routes, config, etc.) 
     ├── requirements.txt # Python dependencies │ 
     ├── venv/ # Virtual environment (not tracked in Git) 
-    └── README.md # This readme file 
+    └── README.md # This readme file
+```
 
 ## 5. Installation and Setup
 
@@ -81,22 +83,23 @@ Make sure you have the following installed:
    python -m venv venv
    ```
 3. **Activate the Virtual Environment**
-   Windows (Command Prompt or PowerShell)
-   ```
-   venv\Scripts\activate
-   ```
    
-   Mac/Linux
-   ```
-   source venv/bin/activate
-   ```
+      Windows (Command Prompt or PowerShell)
+      ```
+      venv\Scripts\activate
+      ```
+      
+      Mac/Linux
+      ```
+      source venv/bin/activate
+      ```
 
-4. **Install Dependencies**
+5. **Install Dependencies**
    ```sh
    pip install -r requirements.txt
    ```
 
-5. **Run the Application**
+6. **Run the Application**
    ```sh
    python app.py
    ```
@@ -139,4 +142,4 @@ Make sure you have the following installed:
   - The `is_public` field determines if the file is visible in `/public_files`.
 
 ## Secret Key Setup
-By default, this project uses a demo secret key in config.py. In a production environment, we would load this key from an environment variable or a .env file. For the purposes of this assignment, you can leave the demo key as-is.
+By default, this project uses a demo secret key in app.py. In a production environment, we would load this key from an environment variable or a .env file. For the purposes of this assignment, you can leave the demo key as-is.
