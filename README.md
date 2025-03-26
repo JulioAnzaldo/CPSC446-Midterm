@@ -55,8 +55,7 @@ my_project/
     ├── back_end/
         ├── uploads/ # Folder that holds user uploads (PDF's)
         └── app.py # Main Flask app (routes, config, etc.) 
-    ├── requirements.txt # Python dependencies │ 
-    ├── venv/ # Virtual environment (not tracked in Git) 
+    ├── requirements.txt # Python dependencies
     └── README.md # This readme file 
 
 ## 5. Installation and Setup
@@ -123,7 +122,7 @@ Make sure you have the following installed:
 | Method | Endpoint       | Description |
 |--------|--------------|-------------|
 | **GET** | `/` | Serves the front-end homepage (if applicable, but not sure at this point). |
-| **GET** | `/public_files` | Returns a list of all publicly available files. |
+| **GET** | `/public` | Returns a list of all publicly available files. |
 
 ---
 
@@ -136,7 +135,7 @@ Make sure you have the following installed:
 - **File Upload Requirements:**  
   - Only **PDF** files are allowed.
   - Maximum file size: **2MB**.
-  - The `is_public` field determines if the file is visible in `/public_files`.
+  - The `is_public` field determines if the file is visible in `/public`.
 
 ## Secret Key Setup
 By default, this project uses a demo secret key in config.py. In a production environment, we would load this key from an environment variable or a .env file. For the purposes of this assignment, you can leave the demo key as-is.

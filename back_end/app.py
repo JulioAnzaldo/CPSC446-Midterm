@@ -6,8 +6,6 @@ from werkzeug.utils import secure_filename
 
 app = Flask(
     __name__,
-    template_folder = "../front_end/templates",
-    static_folder = "../front_end/static"
 )
 
 # Generate a secure secret key, would not be hardcoded in production
@@ -104,7 +102,7 @@ def protected():
     user_id = get_jwt_identity()
     return jsonify({"message": f"Welcome, user {user_id}. This is a protected route."})
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods = ['POST'])
 @jwt_required()
 def upload_file():
     # Ensure the file part is present in the request
@@ -153,7 +151,7 @@ def upload_file():
     return jsonify({"message": "File uploaded successfully", "is_public": is_public}), 201
 
 
-@app.route('/public_files', methods = ['GET'])
+@app.route('/public', methods = ['GET'])
 def public_files():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -168,6 +166,9 @@ def public_files():
 
     return jsonify(files)
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return jsonify({"error": "Page does not exist"}), 404
 
 if __name__ == "__main__":
     app.run(debug = True)
