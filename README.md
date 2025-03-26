@@ -58,6 +58,7 @@ my_project/
         └── app.py # Main Flask app (routes, config, etc.) 
     ├── requirements.txt # Python dependencies
     └── README.md # This readme file 
+```
 
 ## 5. Installation and Setup
 
