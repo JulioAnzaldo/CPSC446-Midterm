@@ -56,15 +56,8 @@ my_project/
     ├── back_end/
         ├── uploads/ # Folder that holds user uploads (PDF's)
         └── app.py # Main Flask app (routes, config, etc.) 
-<<<<<<< HEAD
     ├── requirements.txt # Python dependencies
     └── README.md # This readme file 
-=======
-    ├── requirements.txt # Python dependencies │ 
-    ├── venv/ # Virtual environment (not tracked in Git) 
-    └── README.md # This readme file
-```
->>>>>>> origin/main
 
 ## 5. Installation and Setup
 
